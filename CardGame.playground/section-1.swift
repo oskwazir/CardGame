@@ -56,18 +56,30 @@ class PlayingCard:Card{
     
     let rank:Int?
     
-    override var contents:String {
+    public let validSuits:[String] = ["\u{2665}","\u{2666}","\u{2663}","\u{2660}"]
+    
+    private let rankStrings = ["?","A","2","3","4","5","6","7","8","9","10","J","Q","K"]
+    
+    public override var contents:String {
         get {
-            return "\(self.rank)\(self.suit)"
+            return "\(self.rankStrings[self.rank!])\(self.suit!)"
         }
     }
     
     init(suit:String,rank:Int){
         super.init()
-        self.suit = suit;
+        if(contains(self.validSuits, suit)){
+            self.suit = suit;
+        }
+        
         self.rank = rank;
     }
     
-
-    
+    public func maxRank() -> Int {
+        return self.rankStrings.count - 1
+    }
 }
+
+let ace:PlayingCard = PlayingCard(suit: "\u{2663}", rank: 1)
+
+ace.contents
