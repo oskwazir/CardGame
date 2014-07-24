@@ -12,6 +12,10 @@
 		B7868DAF197EF2B4007C997E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7868DAD197EF2B4007C997E /* Main.storyboard */; };
 		B7868DB1197EF2B4007C997E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7868DB0197EF2B4007C997E /* Images.xcassets */; };
 		B7868DBD197EF2B4007C997E /* CardGameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7868DBC197EF2B4007C997E /* CardGameTests.swift */; };
+		B7C939C11980D0FB0005E447 /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C939C01980D0FB0005E447 /* Deck.swift */; };
+		B7C939C31980D1AF0005E447 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C939C21980D1AF0005E447 /* Card.swift */; };
+		B7C939C51980D1CA0005E447 /* PlayingCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C939C41980D1CA0005E447 /* PlayingCard.swift */; };
+		B7C939C71980D1E30005E447 /* PlayingCardDeck.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C939C61980D1E30005E447 /* PlayingCardDeck.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +38,10 @@
 		B7868DB6197EF2B4007C997E /* CardGameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CardGameTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7868DBB197EF2B4007C997E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B7868DBC197EF2B4007C997E /* CardGameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardGameTests.swift; sourceTree = "<group>"; };
+		B7C939C01980D0FB0005E447 /* Deck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
+		B7C939C21980D1AF0005E447 /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		B7C939C41980D1CA0005E447 /* PlayingCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayingCard.swift; sourceTree = "<group>"; };
+		B7C939C61980D1E30005E447 /* PlayingCardDeck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayingCardDeck.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +88,10 @@
 				B7868DAD197EF2B4007C997E /* Main.storyboard */,
 				B7868DB0197EF2B4007C997E /* Images.xcassets */,
 				B7868DA7197EF2B4007C997E /* Supporting Files */,
+				B7C939C01980D0FB0005E447 /* Deck.swift */,
+				B7C939C21980D1AF0005E447 /* Card.swift */,
+				B7C939C41980D1CA0005E447 /* PlayingCard.swift */,
+				B7C939C61980D1E30005E447 /* PlayingCardDeck.swift */,
 			);
 			path = CardGame;
 			sourceTree = "<group>";
@@ -208,8 +220,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B7C939C51980D1CA0005E447 /* PlayingCard.swift in Sources */,
+				B7C939C11980D0FB0005E447 /* Deck.swift in Sources */,
 				B7868DAC197EF2B4007C997E /* ViewController.swift in Sources */,
+				B7C939C71980D1E30005E447 /* PlayingCardDeck.swift in Sources */,
 				B7868DAA197EF2B4007C997E /* AppDelegate.swift in Sources */,
+				B7C939C31980D1AF0005E447 /* Card.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -395,6 +411,7 @@
 				B7868DC2197EF2B4007C997E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B7868DC3197EF2B4007C997E /* Build configuration list for PBXNativeTarget "CardGameTests" */ = {
 			isa = XCConfigurationList;
@@ -403,6 +420,7 @@
 				B7868DC5197EF2B4007C997E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
