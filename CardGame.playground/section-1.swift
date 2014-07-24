@@ -56,30 +56,47 @@ class PlayingCard:Card{
     
     let rank:Int?
     
-    public let validSuits:[String] = ["\u{2665}","\u{2666}","\u{2663}","\u{2660}"]
+    // validSuits and rankStrings are type properties.
+    // No need for individual instances to dupe these properties
+    class var validSuits:[String] {
+        return ["\u{2665}","\u{2666}","\u{2663}","\u{2660}"]
+    }
     
-    private let rankStrings = ["?","A","2","3","4","5","6","7","8","9","10","J","Q","K"]
+    class var rankStrings:[String] {
+        return ["?","A","2","3","4","5","6","7","8","9","10","J","Q","K"]
+    }
     
     public override var contents:String {
         get {
-            return "\(self.rankStrings[self.rank!])\(self.suit!)"
+            return "\(PlayingCard.rankStrings[self.rank!])\(self.suit!)"
         }
     }
     
     init(suit:String,rank:Int){
         super.init()
-        if(contains(self.validSuits, suit)){
+        if(contains(PlayingCard.validSuits, suit)){
             self.suit = suit;
         }
         
         self.rank = rank;
     }
     
-    public func maxRank() -> Int {
-        return self.rankStrings.count - 1
+    class func maxRank() -> Int {
+        return PlayingCard.rankStrings.count - 1
     }
 }
 
-let ace:PlayingCard = PlayingCard(suit: "\u{2663}", rank: 1)
+class PlayingCardDeck: Deck{
 
-ace.contents
+    init() {
+        super.init()
+        for suit:String in PlayingCard.validSuits{
+            for(var rank = 1; rank <= PlayingCard.maxRank();rank++){
+                let card:PlayingCard = PlayingCard(suit: suit, rank: rank)
+                self.addCard(card: card)
+            }
+        }
+    }
+}
+
+
