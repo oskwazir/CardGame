@@ -2,7 +2,7 @@
 //  PlayingCard.swift
 //  CardGame
 //
-//  Created by Omer Wazir on 7/23/14.
+//  Created by Omer Wazir on 7/24/14.
 //  Copyright (c) 2014 Omer Wazir. All rights reserved.
 //
 
@@ -16,18 +16,12 @@ class PlayingCard:Card{
     
     // validSuits and rankStrings are type properties.
     // No need for individual instances to dupe these properties
-    class var validSuits:[String] {
-    return ["\u{2665}","\u{2666}","\u{2663}","\u{2660}"]
+    public class var validSuits:[String] {
+        return ["\u{2665}","\u{2666}","\u{2663}","\u{2660}"]
     }
     
-    class var rankStrings:[String] {
-    return ["?","A","2","3","4","5","6","7","8","9","10","J","Q","K"]
-    }
-    
-    public override var contents:String {
-    get {
-        return "\(PlayingCard.rankStrings[self.rank!])\(self.suit!)"
-    }
+    public class var rankStrings:[String] {
+        return ["?","A","2","3","4","5","6","7","8","9","10","J","Q","K"]
     }
     
     init(suit:String,rank:Int){
@@ -37,6 +31,8 @@ class PlayingCard:Card{
         }
         
         self.rank = rank;
+        
+        self.content = "\(PlayingCard.rankStrings[self.rank!])\(self.suit!)"
     }
     
     class func maxRank() -> Int {

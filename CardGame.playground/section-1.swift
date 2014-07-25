@@ -41,7 +41,7 @@ class Deck{
     }
     
     func drawRandomCard() -> Card{
-        let index = random() % self.cards.count
+        let index = Int(arc4random_uniform(UInt32(self.cards.count)))
         let randomCard:Card = self.cards[index]
         self.cards.removeAtIndex(index);
         
@@ -98,5 +98,10 @@ class PlayingCardDeck: Deck{
         }
     }
 }
+
+let deck:PlayingCardDeck = PlayingCardDeck()
+let foo = deck.drawRandomCard()
+foo.contents
+
 
 

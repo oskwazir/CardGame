@@ -2,7 +2,7 @@
 //  Card.swift
 //  CardGame
 //
-//  Created by Omer Wazir on 7/23/14.
+//  Created by Omer Wazir on 7/24/14.
 //  Copyright (c) 2014 Omer Wazir. All rights reserved.
 //
 
@@ -10,7 +10,7 @@ import Foundation
 
 class Card{
     
-    let contents:String = ""
+    var content:String = ""
     
     var chosen:Bool = false;
     var matched:Bool = false;
@@ -19,7 +19,7 @@ class Card{
         var score = 0;
         
         for card in otherCards{
-            if(card.contents == self.contents){
+            if(card.content == self.content){
                 score = 1;
             }
         }

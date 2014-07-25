@@ -2,13 +2,12 @@
 //  Deck.swift
 //  CardGame
 //
-//  Created by Omer Wazir on 7/23/14.
+//  Created by Omer Wazir on 7/24/14.
 //  Copyright (c) 2014 Omer Wazir. All rights reserved.
 //
 
 import Foundation
 
-//a class for a deck of any kind of card
 class Deck{
     
     private var cards:[Card] = []
@@ -22,8 +21,12 @@ class Deck{
         }
     }
     
-    func drawRandomCard() -> Card{
-        let index = random() % self.cards.count
+    func drawRandomCard() -> Card?{
+        let index = Int(arc4random_uniform(UInt32(self.cards.count)))
+        //once cards are exhausted need to return nil
+        if self.cards.isEmpty {
+            return nil
+        }
         let randomCard:Card = self.cards[index]
         self.cards.removeAtIndex(index);
         
